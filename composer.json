@@ -1,7 +1,7 @@
 {
-  "name": "warmiak/TailwindScaffolding",
-  "description": "Orendo Laravel Frontend Preset",
-  "keywords": ["Orendo Laravel", "Orendo", "Laravel"],
+  "name": "warmiak/bulma",
+  "description": "Laravel Bulma Scaffolding",
+  "keywords": ["Orendo Laravel", "Bulma", "Orendo", "Laravel"],
   "license": "MIT",
   "authors": [
     {
@@ -12,12 +12,12 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "Orendo\\TailwindScaffolding\\": "src/"
+      "Orendo\\BulmaScaffolding\\": "src/"
     }
   },
   "extra": {
     "laravel": {
-      "providers": ["Orendo\\TailwindScaffolding\\OrendoServiceProvider"]
+      "providers": ["Orendo\\BulmaScaffolding\\OrendoServiceProvider"]
     }
   }
 }
