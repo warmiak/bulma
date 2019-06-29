@@ -9,6 +9,9 @@
       "email": "peter.wolkiewicz@orendo.de"
     }
   ],
+  "require": {
+        "warmiak/laracl": "1.0.*"
+  },
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
