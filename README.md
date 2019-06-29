@@ -1,1 +1,1 @@
-# laravel-package
+## Laravel Bulma Scaffolding
