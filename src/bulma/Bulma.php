@@ -36,7 +36,8 @@ class Bulma extends OrendoPreset
         if (File::isDirectory(resource_path('js'))) {
             File::deleteDirectory(resource_path('js'));
         }
-		
+		copy(__DIR__ . '/js/webpack.mix.js', base_path('webpack.mix.js'));
+			
 		File::copyDirectory(__DIR__ .'/js', resource_path('js')); 
     }
 
