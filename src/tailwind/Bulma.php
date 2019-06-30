@@ -1,12 +1,12 @@
 <?php
 
-namespace Orendo\TailwindScaffolding\Tailwind;
+namespace Orendo\BulmaScaffolding;
 
 use Illuminate\Foundation\Console\Presets\Preset as OrendoPreset;
 use Illuminate\Support\Facades\File;
 
 
-class Tailwind extends OrendoPreset
+class Bulma extends OrendoPreset
 {
     public static function install()
     {

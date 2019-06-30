@@ -4,7 +4,7 @@ namespace Orendo\TailwindScaffolding;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;
-use Orendo\TailwindScaffolding\Tailwind\Tailwind;
+use Orendo\BulmaScaffolding\Bulma;
 
 class OrendoServiceProvider extends ServiceProvider
 {
@@ -15,10 +15,10 @@ class OrendoServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PresetCommand::macro('tailwind', function ($command) {
+        PresetCommand::macro('bulma', function ($command) {
             Tailwind::install();
 
-            $command->info('Tailwind scaffolding installed successfully.');
+            $command->info('Bulma scaffolding installed successfully.');
             $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
 
