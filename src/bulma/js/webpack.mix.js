@@ -14,14 +14,10 @@ let tailwindcss = require('tailwindcss');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/admin.js', 'public/js')
-    .less('resources/assets/less/app.less', 'public/css')
-    .options({
-        postCss: [
-            tailwindcss('./tailwind.js')
-        ]
-    })
-    .styles([
-        'resources/assets/css/materialdesignicons.css'
-    ], 'public/css/style.css');
+mix.js('resources/js/app.js', 'public/js')
+   .js('resources/js/admin.js', 'public/js')
+   .sass('resources/bulma.sass', 'public/css')
+   .styles([
+        'resources/css/materialdesignicons.css',
+        'resources/css/style.css'
+   ], 'public/css/style.css');

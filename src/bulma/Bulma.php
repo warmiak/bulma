@@ -11,11 +11,10 @@ class Bulma extends OrendoPreset
     public static function install()
     {
         static::updatePackages();
-        static::updateMix();
         static::updateScripts();
         static::installBulma();
         static::updateViews();
-        static::installMaterialDesignIcons();
+		static::installCssAssets();
     }
 
     public static function updatePackageArray()
@@ -32,20 +31,12 @@ class Bulma extends OrendoPreset
         ];
     }
 
-    public static function updateMix()
-    {
-        copy(__DIR__ . '/js/webpack.mix.js', base_path('webpack.mix.js'));
-    }
-
     public static function updateScripts()
     {
-        copy(__DIR__ . '/js/app.js', resource_path('js/app.js'));
-        copy(__DIR__ . '/js/admin.js', resource_path('js/admin.js'));
-        copy(__DIR__ . '/js/bootstrap.js', resource_path('js/bootstrap.js'));
-        copy(__DIR__. '/js/emmet.js', resource_path('js/emmet.js'));
-
-        File::copyDirectory(__DIR__.'/js/components', resource_path('js/components'));
-        File::copyDirectory(__DIR__.'/js/store', resource_path('js/store'));
+        if (File::isDirectory(resource_path('js'))) {
+            File::deleteDirectory(resource_path('js'));
+        }
+		File::copyDirectory(__DIR__ .'/js', resource_path('js')); 
     }
 
     public static function installBulma()
@@ -53,51 +44,28 @@ class Bulma extends OrendoPreset
         if (File::isDirectory(resource_path('sass'))) {
             File::deleteDirectory(resource_path('sass'));
         }
-		File::copyDirectory(__DIR__.'/sass', resource_path('sass')); 
+		File::copyDirectory(__DIR__ .'/sass', resource_path('sass')); 
 		
 		if (!File::exists(resource_path('bulma.sass'))) {
 			copy(__DIR__ . 'bulma.sass', resource_path('bulma.sass'));
         }
-
     }
 
     public static function updateViews()
     {
-        if (File::isDirectory(resource_path('views/layouts'))) {
-            File::deleteDirectory(resource_path('views/layouts'));
+        if (File::isDirectory(resource_path('views'))) {
+            File::deleteDirectory(resource_path('views'));
         }
 
-        if (File::isDirectory(resource_path('views/auth'))) {
-            File::deleteDirectory(resource_path('views/auth'));
-        }
-
-        if (File::isDirectory(resource_path('views/profile'))) {
-            File::deleteDirectory(resource_path('views/profile'));
-        }
-
-        if (File::exists(resource_path('views/welcome.blade.php'))) {
-            File::delete(resource_path('views/welcome.blade.php'));
-        }
-
-        if (File::exists(resource_path('views/home.blade.php'))) {
-            File::delete(resource_path('views/home.blade.php'));
-        }
-
-        File::copyDirectory(__DIR__.'/views', resource_path('views'));
+        File::copyDirectory(__DIR__ .'/views', resource_path('views'));
     }
 
-    public static function installMaterialDesignIcons()
+    public static function installCssAssets()
     {
-        if (!File::isDirectory(resource_path('css'))) {
-            File::makeDirectory(resource_path('css'));
-        }
+		if (File::isDirectory(resource_path('css'))) {
+			File::delete(resource_path('css'));
+		}
 
-        if (File::exists(resource_path('css/materialdesignicons.css'))) {
-            File::delete(resource_path('css/materialdesignicons.css'));
-        }
-
-        copy(__DIR__ . '/css/materialdesignicons.css', resource_path('css/materialdesignicons.css'));
-
-        File::copyDirectory(__DIR__.'/fonts', base_path('public/fonts'));
-    }
+        File::copyDirectory(__DIR__ .'/css', resource_path('css'));
+	}
 }
