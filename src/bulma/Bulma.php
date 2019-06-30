@@ -10,18 +10,12 @@ class Bulma extends OrendoPreset
 {
     public static function install()
     {
-        static::cleanSassFolder();
         static::updatePackages();
         static::updateMix();
         static::updateScripts();
-        static::installTailwind();
+        static::installBulma();
         static::updateViews();
         static::installMaterialDesignIcons();
-    }
-
-    public static function cleanSassFolder()
-    {
-        File::cleanDirectory(resource_path('sass'));
     }
 
     public static function updatePackageArray()
@@ -54,14 +48,17 @@ class Bulma extends OrendoPreset
         File::copyDirectory(__DIR__.'/js/store', resource_path('js/store'));
     }
 
-    public static function installTailwind()
-    {
-        if (!File::isDirectory(resource_path('less'))) {
-            File::makeDirectory(resource_path('less'));
+    public static function installBulma()
+	{
+        if (File::isDirectory(resource_path('sass'))) {
+            File::deleteDirectory(resource_path('sass'));
+        }
+		File::copyDirectory(__DIR__.'/sass', resource_path('sass')); 
+		
+		if (!File::exists(resource_path('bulma.sass'))) {
+			copy(__DIR__ . 'bulma.sass', resource_path('bulma.sass'));
         }
 
-        copy(__DIR__ . '/less/app.less', resource_path('assets/less/app.less'));
-        copy(__DIR__ . '/js/tailwind.js', base_path('tailwind.js'));
     }
 
     public static function updateViews()
