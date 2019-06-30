@@ -1,6 +1,6 @@
 <?php
 
-namespace Orendo\TailwindScaffolding;
+namespace Orendo\BulmaScaffolding;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;
