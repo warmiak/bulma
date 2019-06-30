@@ -36,6 +36,7 @@ class Bulma extends OrendoPreset
         if (File::isDirectory(resource_path('js'))) {
             File::deleteDirectory(resource_path('js'));
         }
+		
 		File::copyDirectory(__DIR__ .'/js', resource_path('js')); 
     }
 
@@ -44,11 +45,8 @@ class Bulma extends OrendoPreset
         if (File::isDirectory(resource_path('sass'))) {
             File::deleteDirectory(resource_path('sass'));
         }
-		File::copyDirectory(__DIR__ .'/sass', resource_path('sass')); 
 		
-		if (!File::exists(resource_path('bulma.sass'))) {
-			copy(__DIR__ . 'bulma.sass', resource_path('bulma.sass'));
-        }
+		File::copyDirectory(__DIR__ .'/sass', resource_path('sass')); 
     }
 
     public static function updateViews()
