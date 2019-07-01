@@ -1,24 +1,39 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    <div class="container mx-auto">
-        <h2 class="mb-8 p-2 bg-blue-darker text-white">Dashboard</h2>
-        <div class="px-4">
-            <div class="p-2 text-xs mb-2">
-                PHP version: {{ $system['php_version'] }}
-            </div>
-            <div class="p-2 text-xs mb-2">
-{{--                MySql Version: {{ $system['mysql_version'] }}--}}
-            </div>
-            <div class="p-2 text-xs mb-2">
-                Node Version: {{ $system['node_version'] }}
-            </div>
-            <div class="p-2 text-xs mb-2">
-                Composer Version: {{ $system['composer_version'] }}
-            </div>
-            <div class="p-2 text-xs mb-2">
-                {{ $system['system_os'] }}
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="box">
+                <nav class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">PHP</p>
+                            <p class="title">{{ $system['php_version'] }}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">MySql</p>
+                            <p class="title">{{ $system['mysql_version'] }}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Node.js</p>
+                            <p class="title">{{ $system['node_version'] }}</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Composer</p>
+                            <p class="title">{{ $system['composer_version'] }}</p>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
-    </div>
+    </section>
+
+
 @endsection
