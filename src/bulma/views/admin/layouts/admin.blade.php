@@ -17,28 +17,24 @@
 
 <div id="app">
 
-    <div class="flex">
+    <div class="has-background-dark">
+        @include('admin.layouts.partials.navigationAdmin')
+    </div>
 
-        <div class="w-1/6">
-            <aside>
-                @include('admin.layouts.partials.aside')
-            </aside>
+    <div class="container">
+        @include('layouts.partials.flash')
+    </div>
+
+    <div class="columns">
+        <div class="column is-narrow">
+            @include('admin.layouts.partials.aside')
         </div>
-
-        <div class="w-full">
-            <header>
-                @include('admin.layouts.partials.navigationAdmin')
-                @include('layouts.partials.flash')
-            </header>
-            <main class="p-6">
-                <div class="bg-white shadow pb-6">
-                    @yield('content')
-                </div>
-            </main>
+        <div class="column">
+            @yield('content')
         </div>
-
     </div>
 
 </div>
+
 </body>
 </html>

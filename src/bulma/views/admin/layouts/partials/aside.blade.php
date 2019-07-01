@@ -1,22 +1,16 @@
-<div class="flex flex-col bg-blue-darker h-screen" style="padding-top: 3rem">
-    <div class="mx-2">
-        <a class="block text-white text-lg w-full hover:bg-white hover:text-grey-darkest p-2" href="{{ route('admin_dashboard') }}">
-            <i class="mdi mdi-view-dashboard mdi-18px"></i> Dashboard
-        </a>
-    </div>
-    <div class="mx-2">
-        <a class="block text-white text-lg w-full hover:bg-white hover:text-grey-darkest p-2" href="{{ route('admin_permission') }}">
-            <i class="mdi mdi-security-account mdi-18px"></i> Permission
-        </a>
-    </div>
-    <div class="mx-2">
-        <a class="block text-white text-lg w-full hover:bg-white hover:text-grey-darkest p-2" href="{{ route('admin_account') }}">
-            <i class="mdi mdi-account mdi-18px"></i> Account
-        </a>
-    </div>
-    <div class="mx-2">
-        <a class="block text-white text-lg w-full hover:bg-white hover:text-grey-darkest p-2" href="{{ route('admin_logs') }}">
-            <i class="mdi mdi-file-document mdi-18px"></i> Logs
-        </a>
-    </div>
-</div>
+<aside class="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    <li><a href="{{ route('admin_dashboard') }}">Dashboard</a></li>
+  </ul>
+  <p class="menu-label">
+    Administration
+  </p>
+  <ul class="menu-list">
+    <li><a href="{{ route('admin_account') }}">Account</a></li>
+    <li><a href="{{ route('admin_permission') }}">Permissions</a></li>
+    <li><a href="{{ route('admin_logs') }}">Logs</a></li>
+  </ul>
+</aside>
