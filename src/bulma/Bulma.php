@@ -65,6 +65,7 @@ class Bulma extends OrendoPreset
 			File::delete(resource_path('css'));
 		}
 
-        File::copyDirectory(__DIR__ .'/css', resource_path('css'));
+		File::copyDirectory(__DIR__ .'/css', resource_path('css'));
+		File::copyDirectory(__DIR__.'/fonts', base_path('public/fonts'));
 	}
 }

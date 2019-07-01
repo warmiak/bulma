@@ -16,7 +16,7 @@ let tailwindcss = require('tailwindcss');
 
 mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/admin.js', 'public/js')
-   .sass('resources/sass/bulma.sass', 'public/css')
+   .sass('resources/sass/bulma.sass', 'public/css/app.css')
    .styles([
         'resources/css/materialdesignicons.css',
         'resources/css/style.css'
