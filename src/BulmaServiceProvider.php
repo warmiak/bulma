@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;
 use Orendo\BulmaScaffolding\Bulma;
 
-class OrendoServiceProvider extends ServiceProvider
+class BulmaServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.

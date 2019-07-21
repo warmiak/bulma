@@ -14,7 +14,7 @@ class Bulma extends OrendoPreset
         static::updateScripts();
         static::installBulma();
         static::updateViews();
-		static::installCssAssets();
+		    static::installCssAssets();
     }
 
     public static function updatePackageArray()
@@ -37,8 +37,8 @@ class Bulma extends OrendoPreset
             File::deleteDirectory(resource_path('js'));
         }
 		copy(__DIR__ . '/js/webpack.mix.js', base_path('webpack.mix.js'));
-			
-		File::copyDirectory(__DIR__ .'/js', resource_path('js')); 
+
+		File::copyDirectory(__DIR__ .'/js', resource_path('js'));
     }
 
     public static function installBulma()
@@ -46,8 +46,8 @@ class Bulma extends OrendoPreset
         if (File::isDirectory(resource_path('sass'))) {
             File::deleteDirectory(resource_path('sass'));
         }
-		
-		File::copyDirectory(__DIR__ .'/sass', resource_path('sass')); 
+
+		File::copyDirectory(__DIR__ .'/sass', resource_path('sass'));
     }
 
     public static function updateViews()
