@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-        "warmiak/laracl": "0.1.*"
+        "warmiak/laracl": "1.*"
   },
   "minimum-stability": "stable",
   "autoload": {
